@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --beige: #F4F5F1;
+    --dk_beige: #e8e8e8;
+    --mid_shade: #266eeb;
+    /* dark theme */
+    /* --beige: #1E1E1E;
+    --dk_beige: black;
+    --mid_shade: #F4F5F1; */
+}
+
+body {
+    background-color: var(--beige);
+    color: var(--mid_shade);
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+}
+
+.img-small {
+    height: 40px;
+    border-radius: 50%;
+}
+
+aside {
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2em;
+    background-color: var(--dk_beige);
+    img {
+        align-self: self-start;
+        margin-bottom: 5rem;
+        max-width: 100%;
+    }
+    ul {
+        list-style: none;
+        display: grid;
+        gap: 1em;
+        li {
+            display: grid;
+            grid-template-columns: 1.4rem auto;
+            gap: 0.4em;
+            i {
+                justify-self: center;
+                /* align icons in a column */
+            }
+        }
+        li:nth-child(7) {
+            margin-top: 4rem;
+        }
+        li:hover {
+            filter: brightness(1.4);
+        }
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    gap: 1em;
+    #top-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--mid_shade);
+        #search-bar{
+            width: 80%;
+            input {
+                margin-left: 0.4rem;
+                border-style: none;
+                background-color: var(--dk_beige);
+                border-radius: 7px;
+                height: 1.5rem;
+                width: 70%;
+            }
+            input::placeholder{
+                color: var(--mid_shade);
+            }
+        }
+        #user-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.2em;
+            i:hover{
+                filter: brightness(1.4);
+            }
+            h3:hover {
+                filter: brightness(1.4);
+            }
+        }
+    }
+    #bottom-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .left {
+            color: var(--mid_shade);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.2em;
+            .user-image {
+                height: 60px;
+                border-radius: 50%;
+            }
+            .greeting {
+                h1 {
+                    font-size: clamp(2rem, -1rem + 7vw, 4rem);
+                }
+            }
+        }
+        .right {
+            button {
+                font-family: "Questrial", sans-serif;
+                font-weight: 400;
+                padding: 0.6em 1.2em;
+                margin-left: 1em;
+                border-style: none;
+                background-color: var(--mid_shade);
+                color: var(--beige);
+                border-radius: 20px;
+            }
+            button:hover {
+                filter: brightness(1.2);
+            }
+            button:active {
+                scale: 95%;
+            }
+        }
+    }
+}
+
+.card, .announcement-box, .trending-box {
+    border-radius: 20px;
+    background-color: var(--beige);
+    color: var(--mid_shade);
+    border: 1px solid var(--mid_shade);
+    border-left: 5px solid var(--mid_shade);
+    padding: 20px;
+} 
+
+section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1em;
+    padding: 20px;
+    background-color: var(--beige);
+    #middle-section {
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 0.6em;
+            text-transform: uppercase;
+        }
+        #cards-container {
+            display: grid;
+             grid-template-columns: 1fr 1fr;
+             grid-template-rows: 1fr 1fr 1fr;
+             gap: 1em;
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                position: relative;
+                h4 {
+                    font-size: 1.6em;
+                    margin-bottom: 1em;
+                }
+                p {
+                    width: 70%;
+                    font-family: "Source Code Pro", monospace;
+                    font-optical-sizing: auto;
+                    font-weight: 300;
+                    font-style: normal;
+                    font-size: 0.8em;
+                }
+                i {
+                    position: absolute;
+                    align-self: flex-end;
+                    bottom: 0.5em;
+                }
+                i:hover {
+                    filter: brightness(1.2);
+                }
+            }
+        }
+    }
+
+    #right-section {
+            grid-column-start: 2;
+            grid-column-end: 3;
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 0.6em;
+            text-transform: uppercase;
+        }
+        .announcement-box{
+            margin-bottom: 20px;
+            h6 {
+                font-size: 0.9em;
+                margin-bottom: 1em;
+            }
+            p {
+                font-family: "Source Code Pro", monospace;
+                font-optical-sizing: auto;
+                font-weight: 300;
+                font-style: normal;
+                font-size: 0.8em;
+                margin-bottom: 1em;
+            }
+            hr {
+                margin-bottom: 1em;
+                border: none;
+                height: 1px;
+                background-color: var(--mid_shade);
+            }
+        }
+        .trending-box {
+            display: grid;
+            grid-template-columns: 1fr 6fr;
+            gap: 1em;
+            
+            p {
+            font-family: "Source Code Pro", monospace;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 0.8em;
+            }
+        }
+    }
+}   
+
